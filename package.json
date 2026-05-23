@@ -1,5 +1,5 @@
 {
-  "name": "@your-org/base-components",
+  "name": "@brainforce/base-components",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
