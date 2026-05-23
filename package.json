@@ -6,8 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "prepare": "npm run build"
+    "test": "ng test"
   },
   "private": false,
   "module": "dist/base-components/fesm2022/brainforce-base-components.mjs",
