@@ -1,0 +1,6 @@
+# Ignore raw source folders to keep installed package small, but do NOT ignore dist
+node_modules/
+.angular/
+projects/
+.git/
+.vscode/
