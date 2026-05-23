@@ -245,6 +245,26 @@ declare class TabsComponent {
     static ɵcmp: i0.ɵɵComponentDeclaration<TabsComponent, "hr-tabs", never, { "tabs": { "alias": "tabs"; "required": false; }; "activeTabId": { "alias": "activeTabId"; "required": false; }; }, { "tabChange": "tabChange"; }, never, ["*"], true, never>;
 }
 
+declare class SpinnerComponent {
+    size: 'sm' | 'md' | 'lg';
+    color: 'brand' | 'white' | 'muted';
+    text: string;
+    fullPage: boolean;
+    overlay: boolean;
+    colorClasses: {
+        brand: string;
+        white: string;
+        muted: string;
+    };
+    sizeClasses: {
+        sm: string;
+        md: string;
+        lg: string;
+    };
+    static ɵfac: i0.ɵɵFactoryDeclaration<SpinnerComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SpinnerComponent, "hr-spinner", never, { "size": { "alias": "size"; "required": false; }; "color": { "alias": "color"; "required": false; }; "text": { "alias": "text"; "required": false; }; "fullPage": { "alias": "fullPage"; "required": false; }; "overlay": { "alias": "overlay"; "required": false; }; }, {}, never, never, true, never>;
+}
+
 declare class LoginComponent implements OnInit {
     private fb;
     title: string;
@@ -298,5 +318,5 @@ declare class ForgotPasswordComponent implements OnInit {
     static ɵcmp: i0.ɵɵComponentDeclaration<ForgotPasswordComponent, "hr-forgot-password", never, { "title": { "alias": "title"; "required": false; }; "subtitle": { "alias": "subtitle"; "required": false; }; "submitButtonText": { "alias": "submitButtonText"; "required": false; }; "isLoading": { "alias": "isLoading"; "required": false; }; "errorMessage": { "alias": "errorMessage"; "required": false; }; "isSuccess": { "alias": "isSuccess"; "required": false; }; }, { "forgotPasswordSubmit": "forgotPasswordSubmit"; "backToLoginClick": "backToLoginClick"; }, never, never, true, never>;
 }
 
-export { ButtonComponent, ButtonGroupComponent, FieldComponent, ForgotPasswordComponent, HeaderComponent, LoginComponent, ModalComponent, NavbarComponent, RegisterComponent, SidePanelComponent, TableComponent, TabsComponent };
+export { ButtonComponent, ButtonGroupComponent, FieldComponent, ForgotPasswordComponent, HeaderComponent, LoginComponent, ModalComponent, NavbarComponent, RegisterComponent, SidePanelComponent, SpinnerComponent, TableComponent, TabsComponent };
 export type { ColumnConfig, NavItem, PaginationConfig, RowAction, TabItem, TableAction, UserProfile };

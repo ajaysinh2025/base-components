@@ -12,6 +12,7 @@ export * from './lib/components/navbar/navbar';
 export * from './lib/components/side-panel/side-panel';
 export * from './lib/components/modal/modal';
 export * from './lib/components/tabs/tabs';
+export * from './lib/components/spinner/spinner';
 
 // Authentication Components
 export * from './lib/components/auth/login';

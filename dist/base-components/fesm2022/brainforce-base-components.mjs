@@ -589,6 +589,136 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.2.14", ngImpo
                 type: Input
             }] } });
 
+class SpinnerComponent {
+    size = 'md';
+    color = 'brand';
+    text = '';
+    fullPage = false;
+    overlay = false;
+    colorClasses = {
+        brand: 'text-brand-600 dark:text-brand-400',
+        white: 'text-white',
+        muted: 'text-slate-400 dark:text-slate-500'
+    };
+    sizeClasses = {
+        sm: 'h-5 w-5',
+        md: 'h-8 w-8',
+        lg: 'h-12 w-12'
+    };
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.2.14", ngImport: i0, type: SpinnerComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.2.14", type: SpinnerComponent, isStandalone: true, selector: "hr-spinner", inputs: { size: "size", color: "color", text: "text", fullPage: "fullPage", overlay: "overlay" }, ngImport: i0, template: `
+    <div
+      [ngClass]="[
+        fullPage ? 'fixed inset-0 z-[2000] bg-slate-950/40 backdrop-blur-xs flex flex-col items-center justify-center gap-3 animate-fade-in' :
+        overlay ? 'absolute inset-0 z-10 bg-white/70 dark:bg-slate-900/70 flex flex-col items-center justify-center gap-3 animate-fade-in' :
+        'flex flex-col items-center justify-center gap-2.5 inline-flex'
+      ]"
+    >
+      <div class="relative flex items-center justify-center">
+        <!-- Spinner Ring -->
+        <svg
+          [ngClass]="[
+            sizeClasses[size],
+            colorClasses[color],
+            'animate-spin'
+          ]"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="3"
+          ></circle>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          ></path>
+        </svg>
+      </div>
+
+      <!-- Spinner Text Label -->
+      <p
+        *ngIf="text"
+        [ngClass]="[
+          size === 'sm' ? 'text-2xs' : 'text-xs',
+          color === 'white' ? 'text-white/90' : 'text-slate-500 dark:text-slate-400'
+        ]"
+        class="font-semibold uppercase tracking-widest text-center select-none"
+      >
+        {{ text }}
+      </p>
+    </div>
+  `, isInline: true, styles: [":host{display:inline-block}.animate-fade-in{animation:fadeIn .15s ease-out forwards}@keyframes fadeIn{0%{opacity:0}to{opacity:1}}.text-2xs{font-size:.65rem}\n"], dependencies: [{ kind: "ngmodule", type: CommonModule }, { kind: "directive", type: i1.NgClass, selector: "[ngClass]", inputs: ["class", "ngClass"] }, { kind: "directive", type: i1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }] });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.2.14", ngImport: i0, type: SpinnerComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'hr-spinner', standalone: true, imports: [CommonModule], template: `
+    <div
+      [ngClass]="[
+        fullPage ? 'fixed inset-0 z-[2000] bg-slate-950/40 backdrop-blur-xs flex flex-col items-center justify-center gap-3 animate-fade-in' :
+        overlay ? 'absolute inset-0 z-10 bg-white/70 dark:bg-slate-900/70 flex flex-col items-center justify-center gap-3 animate-fade-in' :
+        'flex flex-col items-center justify-center gap-2.5 inline-flex'
+      ]"
+    >
+      <div class="relative flex items-center justify-center">
+        <!-- Spinner Ring -->
+        <svg
+          [ngClass]="[
+            sizeClasses[size],
+            colorClasses[color],
+            'animate-spin'
+          ]"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="3"
+          ></circle>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          ></path>
+        </svg>
+      </div>
+
+      <!-- Spinner Text Label -->
+      <p
+        *ngIf="text"
+        [ngClass]="[
+          size === 'sm' ? 'text-2xs' : 'text-xs',
+          color === 'white' ? 'text-white/90' : 'text-slate-500 dark:text-slate-400'
+        ]"
+        class="font-semibold uppercase tracking-widest text-center select-none"
+      >
+        {{ text }}
+      </p>
+    </div>
+  `, styles: [":host{display:inline-block}.animate-fade-in{animation:fadeIn .15s ease-out forwards}@keyframes fadeIn{0%{opacity:0}to{opacity:1}}.text-2xs{font-size:.65rem}\n"] }]
+        }], propDecorators: { size: [{
+                type: Input
+            }], color: [{
+                type: Input
+            }], text: [{
+                type: Input
+            }], fullPage: [{
+                type: Input
+            }], overlay: [{
+                type: Input
+            }] } });
+
 class TableComponent {
     data = [];
     columns = [];
@@ -799,10 +929,7 @@ class TableComponent {
       <!-- Main Table Container -->
       <div class="relative overflow-x-auto w-full">
         <!-- Loading overlay -->
-        <div *ngIf="loading" class="absolute inset-0 bg-white/70 dark:bg-slate-900/70 z-10 flex flex-col items-center justify-center gap-3">
-          <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-600"></div>
-          <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Loading...</p>
-        </div>
+        <hr-spinner *ngIf="loading" [overlay]="true" text="Loading..."></hr-spinner>
 
         <table class="w-full text-left border-collapse min-w-max">
           <thead>
@@ -979,11 +1106,11 @@ class TableComponent {
       </div>
 
     </div>
-  `, isInline: true, styles: [":host{display:block;width:100%}.text-2xs{font-size:.65rem}.text-3xs{font-size:.55rem}.active\\:scale-98:active{transform:scale(.98)}.active\\:scale-90:active{transform:scale(.9)}\n"], dependencies: [{ kind: "ngmodule", type: CommonModule }, { kind: "directive", type: i1.NgClass, selector: "[ngClass]", inputs: ["class", "ngClass"] }, { kind: "directive", type: i1.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { kind: "directive", type: i1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "directive", type: i1.NgTemplateOutlet, selector: "[ngTemplateOutlet]", inputs: ["ngTemplateOutletContext", "ngTemplateOutlet", "ngTemplateOutletInjector"] }, { kind: "ngmodule", type: FormsModule }, { kind: "directive", type: i2.NgSelectOption, selector: "option", inputs: ["ngValue", "value"] }, { kind: "directive", type: i2.ɵNgSelectMultipleOption, selector: "option", inputs: ["ngValue", "value"] }, { kind: "directive", type: i2.DefaultValueAccessor, selector: "input:not([type=checkbox])[formControlName],textarea[formControlName],input:not([type=checkbox])[formControl],textarea[formControl],input:not([type=checkbox])[ngModel],textarea[ngModel],[ngDefaultControl]" }, { kind: "directive", type: i2.SelectControlValueAccessor, selector: "select:not([multiple])[formControlName],select:not([multiple])[formControl],select:not([multiple])[ngModel]", inputs: ["compareWith"] }, { kind: "directive", type: i2.NgControlStatus, selector: "[formControlName],[ngModel],[formControl]" }, { kind: "directive", type: i2.NgModel, selector: "[ngModel]:not([formControlName]):not([formControl])", inputs: ["name", "disabled", "ngModel", "ngModelOptions"], outputs: ["ngModelChange"], exportAs: ["ngModel"] }, { kind: "pipe", type: i1.DatePipe, name: "date" }] });
+  `, isInline: true, styles: [":host{display:block;width:100%}.text-2xs{font-size:.65rem}.text-3xs{font-size:.55rem}.active\\:scale-98:active{transform:scale(.98)}.active\\:scale-90:active{transform:scale(.9)}\n"], dependencies: [{ kind: "ngmodule", type: CommonModule }, { kind: "directive", type: i1.NgClass, selector: "[ngClass]", inputs: ["class", "ngClass"] }, { kind: "directive", type: i1.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { kind: "directive", type: i1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "directive", type: i1.NgTemplateOutlet, selector: "[ngTemplateOutlet]", inputs: ["ngTemplateOutletContext", "ngTemplateOutlet", "ngTemplateOutletInjector"] }, { kind: "ngmodule", type: FormsModule }, { kind: "directive", type: i2.NgSelectOption, selector: "option", inputs: ["ngValue", "value"] }, { kind: "directive", type: i2.ɵNgSelectMultipleOption, selector: "option", inputs: ["ngValue", "value"] }, { kind: "directive", type: i2.DefaultValueAccessor, selector: "input:not([type=checkbox])[formControlName],textarea[formControlName],input:not([type=checkbox])[formControl],textarea[formControl],input:not([type=checkbox])[ngModel],textarea[ngModel],[ngDefaultControl]" }, { kind: "directive", type: i2.SelectControlValueAccessor, selector: "select:not([multiple])[formControlName],select:not([multiple])[formControl],select:not([multiple])[ngModel]", inputs: ["compareWith"] }, { kind: "directive", type: i2.NgControlStatus, selector: "[formControlName],[ngModel],[formControl]" }, { kind: "directive", type: i2.NgModel, selector: "[ngModel]:not([formControlName]):not([formControl])", inputs: ["name", "disabled", "ngModel", "ngModelOptions"], outputs: ["ngModelChange"], exportAs: ["ngModel"] }, { kind: "component", type: SpinnerComponent, selector: "hr-spinner", inputs: ["size", "color", "text", "fullPage", "overlay"] }, { kind: "pipe", type: i1.DatePipe, name: "date" }] });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.2.14", ngImport: i0, type: TableComponent, decorators: [{
             type: Component,
-            args: [{ selector: 'hr-table', standalone: true, imports: [CommonModule, FormsModule], template: `
+            args: [{ selector: 'hr-table', standalone: true, imports: [CommonModule, FormsModule, SpinnerComponent], template: `
     <div class="w-full flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-glass overflow-hidden">
       
       <!-- Top Toolbar (Search, Filter, Table-level actions) -->
@@ -1045,10 +1172,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.2.14", ngImpo
       <!-- Main Table Container -->
       <div class="relative overflow-x-auto w-full">
         <!-- Loading overlay -->
-        <div *ngIf="loading" class="absolute inset-0 bg-white/70 dark:bg-slate-900/70 z-10 flex flex-col items-center justify-center gap-3">
-          <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-600"></div>
-          <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Loading...</p>
-        </div>
+        <hr-spinner *ngIf="loading" [overlay]="true" text="Loading..."></hr-spinner>
 
         <table class="w-full text-left border-collapse min-w-max">
           <thead>
@@ -2789,5 +2913,5 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.2.14", ngImpo
  * Generated bundle index. Do not edit.
  */
 
-export { ButtonComponent, ButtonGroupComponent, FieldComponent, ForgotPasswordComponent, HeaderComponent, LoginComponent, ModalComponent, NavbarComponent, RegisterComponent, SidePanelComponent, TableComponent, TabsComponent };
+export { ButtonComponent, ButtonGroupComponent, FieldComponent, ForgotPasswordComponent, HeaderComponent, LoginComponent, ModalComponent, NavbarComponent, RegisterComponent, SidePanelComponent, SpinnerComponent, TableComponent, TabsComponent };
 //# sourceMappingURL=brainforce-base-components.mjs.map

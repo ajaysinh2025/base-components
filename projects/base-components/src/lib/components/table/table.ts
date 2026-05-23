@@ -33,10 +33,12 @@ export interface TableAction {
   variant?: 'primary' | 'secondary' | 'danger' | 'outline';
 }
 
+import { SpinnerComponent } from '../spinner/spinner';
+
 @Component({
   selector: 'hr-table',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, SpinnerComponent],
   template: `
     <div class="w-full flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-glass overflow-hidden">
       
@@ -99,10 +101,7 @@ export interface TableAction {
       <!-- Main Table Container -->
       <div class="relative overflow-x-auto w-full">
         <!-- Loading overlay -->
-        <div *ngIf="loading" class="absolute inset-0 bg-white/70 dark:bg-slate-900/70 z-10 flex flex-col items-center justify-center gap-3">
-          <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-600"></div>
-          <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Loading...</p>
-        </div>
+        <hr-spinner *ngIf="loading" [overlay]="true" text="Loading..."></hr-spinner>
 
         <table class="w-full text-left border-collapse min-w-max">
           <thead>
