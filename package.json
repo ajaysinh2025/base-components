@@ -6,9 +6,21 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "prepare": "npm run build"
   },
   "private": false,
+  "module": "dist/base-components/fesm2022/brainforce-base-components.mjs",
+  "typings": "dist/base-components/types/brainforce-base-components.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./dist/base-components/types/brainforce-base-components.d.ts",
+      "default": "./dist/base-components/fesm2022/brainforce-base-components.mjs"
+    }
+  },
   "dependencies": {
     "@angular/common": "^21.2.0",
     "@angular/compiler": "^21.2.0",
