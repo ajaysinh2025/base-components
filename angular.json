@@ -1,0 +1,37 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "npm",
+    "analytics": "3dbcbf82-7333-46c4-8f5e-08217c12f217"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "base-components": {
+      "projectType": "library",
+      "root": "projects/base-components",
+      "sourceRoot": "projects/base-components/src",
+      "prefix": "hr",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/base-components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/base-components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/base-components/tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  }
+}
