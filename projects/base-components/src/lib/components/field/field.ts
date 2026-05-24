@@ -174,6 +174,29 @@ import { ReactiveFormsModule, ControlValueAccessor, NgControl, FormsModule } fro
     .animate-fadeIn {
       animation: fadeIn 0.2s ease-out forwards;
     }
+    /* Fallback paddings to prevent overlap if Tailwind classes are purged in host app */
+    .pl-10 {
+      padding-left: 2.5rem !important;
+    }
+    .pl-3\\.5 {
+      padding-left: 0.875rem !important;
+    }
+    .pr-10 {
+      padding-right: 2.5rem !important;
+    }
+    .pr-3\\.5 {
+      padding-right: 0.875rem !important;
+    }
+    .pt-6 {
+      padding-top: 1.5rem !important;
+    }
+    .pb-2 {
+      padding-bottom: 0.5rem !important;
+    }
+    .py-2\\.5 {
+      padding-top: 0.625rem !important;
+      padding-bottom: 0.625rem !important;
+    }
   `]
 })
 export class FieldComponent implements ControlValueAccessor, OnInit {
