@@ -63,7 +63,7 @@ import { SpinnerComponent } from '../spinner/spinner';
 
           <!-- Column Filters -->
           <ng-container *ngFor="let col of columns">
-            <div *ngIf="col.filterable && col.filterOptions" class="relative w-full sm:w-auto">
+            <div *ngIf="col.filterable && col.filterOptions && col.key !== 'statusText' && col.key !== 'status' && col.key !== 'isActive'" class="relative w-full sm:w-auto">
               <select
                 class="w-full px-3 py-2 text-sm rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-premium appearance-none pr-8"
                 [(ngModel)]="columnFilters[col.key]"
